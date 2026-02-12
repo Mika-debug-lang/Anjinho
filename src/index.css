@@ -64,7 +64,6 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 3;
-  background-image: url("/images/angel2.png");
 }
 
 .angel-image {
