@@ -1,0 +1,466 @@
+/* ============================= */
+/* BASE */
+/* ============================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* ============================= */
+/* CONTAINER PRINCIPAL */
+/* ============================= */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ============================= */
+/* IMAGEM DE FUNDO DO REINO */
+/* ============================= */
+
+.celestial-background {
+  position: fixed;
+  inset: 0;
+  background-color: #cfeeff;
+  z-index: -1;
+}
+
+.celestial-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/nuvem_background.png");
+  background-repeat: repeat;
+  background-size: 400px auto;
+  opacity: 0.45;
+}
+
+
+/* ============================= */
+/* CAMADA DO CONTEÚDO */
+/* ============================= */
+
+.content-layer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* ============================= */
+/* ANJO */
+/* ============================= */
+
+.angel-container {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.angel-image {
+  width: 250px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ============================= */
+/* FLECHA */
+/* ============================= */
+
+.arrow {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 20px;
+  height: 6px;
+  opacity: 0;
+  border-radius: 10px;
+  z-index: 4;
+
+  background: linear-gradient(90deg, #ffad32, #fb88ff);
+}
+
+.arrow.shoot {
+  opacity: 1;
+  animation: shootArrow 1.2s linear forwards;
+}
+
+/* ============================= */
+/* FEIXE DE LUZ */
+/* ============================= */
+
+.light-beam {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  height: 8px;
+  width: 0px;
+  border-radius: 20px;
+  z-index: 2;
+
+  background: linear-gradient(
+    to right,
+    rgba(200, 182, 255, 0.95),
+    rgba(179, 136, 235, 0.8),
+    rgba(160, 210, 255, 0.4)
+  );
+
+  box-shadow:
+    0 0 15px rgba(179,136,235,0.9),
+    0 0 30px rgba(200,182,255,0.8),
+    0 0 50px rgba(160,210,255,0.6);
+}
+
+.beam-active {
+  animation: beamExpand 1.2s linear forwards,
+             pulse 0.8s ease-in-out infinite alternate;
+}
+
+/* ============================= */
+/* PORTÃO */
+/* ============================= */
+
+.celestial-gate {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-size: 60px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 5;
+}
+
+.celestial-gate:hover {
+  transform: scale(1.15);
+}
+
+.celestial-gate img {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0 auto;
+  margin-right: 80px;
+  margin-bottom: 280px;
+}
+
+/* ============================= */
+/* MENSAGEM */
+/* ============================= */
+
+.fortune {
+  position: absolute;
+  right: 10%;
+  top: 45%;
+  background: white;
+  padding: 18px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  font-size: 18px;
+  animation: fadeIn 1s ease forwards;
+  z-index: 6;
+}
+
+/* ============================= */
+/* PÁGINA MOTIVACIONAL */
+/* ============================= */
+
+.motivacional-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #e0f0ff);
+  padding: 50px;
+  text-align: center;
+}
+
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+
+.motivacional-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  background: linear-gradient(
+    to bottom,
+    #dff4ff,
+    #bfe9ff
+  );
+}
+
+/* Overlay suave */
+.motivacional-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0.1)
+  );
+}
+
+/* ============================= */
+/* CONTEÚDO */
+/* ============================= */
+
+.motivacional-content {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.motivacional-content h1 {
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #3a4a6b;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+/* ============================= */
+/* GRID DE VERSÍCULOS */
+/* ============================= */
+
+.verses-grid {
+  display: grid;
+  gap: 25px;
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.verse-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.verse-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.verse-text {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2e3a59;
+}
+
+.verse-ref {
+  font-size: 14px;
+  color: #6a7aa3;
+}
+
+/* ============================= */
+/* BOTÃO */
+/* ============================= */
+
+.back-button {
+  margin-top: 40px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background: linear-gradient(
+    90deg,
+    #a0d2ff,
+    #c8b6ff
+  );
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+
+/* ============================= */
+/* ANIMAÇÕES */
+/* ============================= */
+
+@keyframes shootArrow {
+  from { transform: translateX(0); }
+  to { transform: translateX(800px); }
+}
+
+@keyframes beamExpand {
+  from { width: 0px; }
+  to { width: 800px; }
+}
+
+@keyframes pulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================= */
+/* 📱 MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .container {
+    height: 100vh;
+  }
+
+  /* Anjo centralizado */
+  .angel-container {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+  .angel-image {
+    width: 160px;
+  }
+
+  /* Flecha vertical */
+  .arrow,
+  .light-beam {
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+  }
+
+  .arrow {
+    width: 6px;
+    height: 20px;
+  }
+
+  /* Animação para baixo */
+  @keyframes shootArrow {
+    from { transform: translate(-50%, 0); }
+    to { transform: translate(-50%, 300px); }
+  }
+
+  @keyframes beamExpand {
+    from { height: 0px; width: 8px; }
+    to { height: 300px; width: 8px; }
+  }
+
+  .light-beam {
+    width: 8px;
+    height: 0px;
+  }
+
+  /* Mensagem centralizada */
+  .fortune {
+    position: relative;
+    flex-direction: column;
+    top: 65%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* Portão centralizado */
+  .celestial-gate {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .celestial-gate img {
+    width: 160px;
+    height: auto;
+    margin: 0;
+  }
+
+}
+
+/* ============================= */
+/* 📲 TABLET */
+/* ============================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .angel-container {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  .angel-image {
+    width: 200px;
+  }
+
+  /* Flecha vertical */
+  .arrow,
+  .light-beam {
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+  }
+
+  .arrow {
+    width: 6px;
+    height: 20px;
+  }
+
+  @keyframes shootArrow {
+    from { transform: translate(-50%, 0); }
+    to { transform: translate(-50%, 400px); }
+  }
+
+  @keyframes beamExpand {
+    from { height: 0px; width: 8px; }
+    to { height: 400px; width: 8px; }
+  }
+
+  .light-beam {
+    width: 8px;
+    height: 0px;
+  }
+
+  /* Mensagem centralizada */
+  .fortune {
+    position: relative;
+    top: 70%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  .celestial-gate {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
