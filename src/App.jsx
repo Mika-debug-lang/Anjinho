@@ -1,9 +1,20 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
 import Angel from "./components/Angel";
 import Arrow from "./components/Arrow";
 import FortuneMessage from "./components/FortuneMessage";
-import Motivacional from "./pages/Motivacional";
+import MensagemSite from "./components/MensagemSite";
+import Footer from "./components/Footer";
+
+import Palavras from "./pages/Palavras";
+import Mateus from "./pages/Mateus";
+import Lucas from "./pages/Lucas";
+import Corintios from "./pages/Corintios";
+import Apocalipse from "./pages/Apocalipse";
+import Harpas from "./pages/Harpas";
+import Curiosidades from "./pages/Curiosidades";
+
 import "./index.css";
 
 function Home() {
@@ -32,45 +43,73 @@ function Home() {
     setTimeout(() => {
       setMessage(random);
       setShowMessage(true);
-    }, 1000);
+    }, 900);
 
     setTimeout(() => {
       setIsShooting(false);
-    }, 2000);
+    }, 1600);
   };
 
- return (
-  <div className="container">
-
-    {/* IMAGEM DE FUNDO */}
-    <div className="celestial-background"></div>
-
-    {/* CONTEÚDO SOBREPOSTO */}
-    <div className="content-layer">
-      <Angel onShoot={handleShoot} />
-      <Arrow active={isShooting} />
-      {showMessage && <FortuneMessage text={message} />}
-
-      <div
-        className="celestial-gate"
-        onClick={() => navigate("/palavras")}
-      >
-        <img src="/images/reino_celestial.png" alt="" />
-      </div>
-    </div>
-
-  </div>
-);
-
-}
-
-function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/palavras" element={<Motivacional />} />
-    </Routes>
+    <div className="container">
+
+      <div className="celestial-background" />
+
+      <div className="content-layer">
+
+        {/* Anjo e flecha */}
+        <Angel onShoot={handleShoot} />
+        <Arrow active={isShooting} />
+
+        {showMessage && <FortuneMessage text={message} />}
+
+        {/* Reino */}
+        <div
+          className="celestial-gate"
+          onClick={() => navigate("/palavras")}
+        >
+          <img src="/images/reino_celestial.png" alt="Reino Divino" />
+        </div>
+
+        {/* Harpas */}
+        <div
+          className="harp-angels"
+          onClick={() => navigate("/harpas")}
+        >
+          <img src="/images/angel_coral.png" alt="Anjos com Harpas" />
+        </div>
+
+        {/* Curiosidades */}
+        <div
+          className="curiosity-box"
+          onClick={() => navigate("/curiosidades")}
+        >
+          <img src="/images/angel_pergaminho.png" alt="Curiosidades Bíblicas" />
+        </div>
+
+        {/* Mensagem do propósito do site */}
+        <MensagemSite />
+
+        {/* Rodapé */}
+        <Footer />
+
+      </div>
+
+    </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/palavras" element={<Palavras />} />
+      <Route path="/mateus" element={<Mateus />} />
+      <Route path="/lucas" element={<Lucas />} />
+      <Route path="/corintios" element={<Corintios />} />
+      <Route path="/apocalipse" element={<Apocalipse />} />
+      <Route path="/harpas" element={<Harpas />} />
+      <Route path="/curiosidades" element={<Curiosidades />} />
+    </Routes>
+  );
+}

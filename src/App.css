@@ -1,0 +1,358 @@
+/* ============================= */
+/* RESET NECESSÁRIO */
+/* ============================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: auto;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* PÁGINA PERGAMINHO */
+/* ============================= */
+
+.scroll-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* IMPORTANTE: permite crescer */
+
+  background: radial-gradient(circle at top, #f8f1dc, #e8d8b5);
+  font-family: "Georgia", serif;
+
+  overflow-y: auto; /* HABILITA ROLAGEM */
+}
+
+/* ============================= */
+/* CONTAINER DO PERGAMINHO */
+/* ============================= */
+
+.scroll-container {
+  width: 90%;
+  max-width: 850px;
+  padding: 60px 40px;
+  margin-bottom: 60px;
+
+  background: linear-gradient(to bottom, #fdf6e3, #f1e1c2);
+  border: 6px solid #7a5a2c;
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.4),
+    inset 0 0 40px rgba(0,0,0,0.15);
+
+  position: relative;
+}
+
+/* ============================= */
+/* TÍTULO */
+/* ============================= */
+
+.scroll-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #5a3e1b;
+}
+
+/* ============================= */
+/* CONTEÚDO */
+/* ============================= */
+
+.scroll-content {
+  text-align: justify;
+}
+
+/* ============================= */
+/* VERSÍCULOS */
+/* ============================= */
+
+.verse {
+  font-size: 22px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  color: #4b3b2a;
+}
+
+/* ============================= */
+/* LETRA CAPITULAR */
+/* ============================= */
+
+.drop-cap {
+  float: left;
+  font-size: 60px;
+  line-height: 1;
+  padding-right: 10px;
+  font-weight: bold;
+  color: #7a5a2c;
+}
+
+/* ============================= */
+/* REFERÊNCIA */
+/* ============================= */
+
+.ref {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  font-style: italic;
+  color: #7a5a2c;
+}
+
+/* ============================= */
+/* BOTÃO VOLTAR */
+/* ============================= */
+
+.back-button {
+  margin-top: 40px;
+  padding: 12px 30px;
+  border-radius: 4px;
+  border: 2px solid #6b4a20;
+  font-family: "Georgia", serif;
+  font-size: 16px;
+  cursor: pointer;
+
+  background: linear-gradient(to bottom, #b08b52, #8c6b3a);
+  color: #fff;
+
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: linear-gradient(to bottom, #c79c60, #a0763f);
+  transform: translateY(-3px);
+}
+
+/* ============================= */
+/* ANJOS COM HARPA */
+/* ============================= */
+
+.harp-angels {
+  position: absolute;
+  bottom: 330px;
+  left: 180px;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.4s ease;
+}
+
+.harp-angels img {
+  width: 220px;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+  animation: floatHarp 4s ease-in-out infinite;
+}
+
+.harp-angels:hover {
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* CURIOSIDADES */
+/* ============================= */
+
+.curiosity-box {
+  position: absolute;
+  top: 300px;
+  right: 500px;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.4s ease;
+}
+
+.curiosity-box img {
+  width: 200px;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+  animation: floatCuriosity 5s ease-in-out infinite;
+}
+
+.curiosity-box:hover {
+  transform: scale(1.1);
+}
+
+@keyframes floatCuriosity {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+
+@keyframes floatHarp {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .scroll-container {
+    padding: 40px 20px;
+  }
+
+  .verse {
+    font-size: 18px;
+  }
+
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .scroll-page {
+    padding: 40px 0;
+  }
+
+  .scroll-container {
+    width: 95%;
+    padding: 35px 20px;
+    border-width: 4px;
+  }
+
+  .scroll-title {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .verse {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .drop-cap {
+    font-size: 42px;
+  }
+
+  .ref {
+    font-size: 14px;
+  }
+
+  .back-button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  /* Harpa centralizada */
+  .harp-angels {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .harp-angels img {
+    width: 150px;
+  }
+
+  /* Curiosidades centralizada */
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .harp-angels {
+    position: absolute;
+    top: 140px;
+    left: 80%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  .harp-angels img {
+    width: 140px;
+  }
+
+}
+
+  .curiosity-box {
+    position: absolute;
+    top: 140px;
+    left: 5%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  .curiosity-box img {
+    width: 140px;
+  }
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .scroll-page {
+    padding: 60px 0;
+  }
+
+  .scroll-container {
+    width: 85%;
+    padding: 50px 30px;
+  }
+
+  .scroll-title {
+    font-size: 32px;
+  }
+
+  .verse {
+    font-size: 20px;
+  }
+
+  .drop-cap {
+    font-size: 52px;
+  }
+
+  .back-button {
+    font-size: 15px;
+  }
+
+  /* ============================= */
+  /* POSICIONAMENTO DOS ANJOS */
+  /* ============================= */
+
+  /* Anjo da Harpa */
+  .harp-angels {
+    position: absolute;
+    top: 60px;         /* FICA NA PARTE SUPERIOR */
+    left: 45%;         /* LADO DIREITO DO ANJO DO ARCO */
+    transform: translateX(-50%);
+    z-index: 15;       /* ACIMA DO REINO */
+  }
+
+  .harp-angels img {
+    width: 170px;
+  }
+
+  /* Curiosidades */
+  .curiosity-box {
+    position: absolute;
+    top: 70px;        /* ALINHADO NA PARTE SUPERIOR */
+    left: 20%;
+    transform: translateX(-50%);
+    z-index: 15;
+  }
+
+  .curiosity-box img {
+    width: 160px;
+  }
+
+}
+
