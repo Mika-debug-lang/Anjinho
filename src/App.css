@@ -11,6 +11,43 @@ html, body {
 }
 
 /* ============================= */
+/* Imagens de Fundo */
+/* ============================= */
+
+.background-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 🌥 Nuvem atrás do Reino */
+.background-mini {
+  position: absolute;
+  top: 60px;          /* ajuste fino se precisar */
+  right: -120px;        /* move para perto do Reino */
+  width: 850px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* 🏹 Seta apontando para o livro */
+.setas-img {
+  position: absolute;
+  top: 20px;           /* altura do livro */
+  left: 50%;           /* posição horizontal */
+  width: 180px;
+
+  transform: rotate(25deg); /* inclinação apontando para o livro */
+  z-index: 2;
+}
+
+
+
+/* ============================= */
 /* PÁGINA PERGAMINHO */
 /* ============================= */
 
@@ -293,10 +330,6 @@ html, body {
 /* TABLET */
 /* ============================= */
 
-/* ============================= */
-/* TABLET */
-/* ============================= */
-
 @media (min-width: 601px) and (max-width: 1024px) {
 
   .scroll-page {
@@ -355,4 +388,3 @@ html, body {
   }
 
 }
-

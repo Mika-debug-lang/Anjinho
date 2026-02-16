@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import BackgroundMusic from "../BackgroundMusic";
 
 function Palavras() {
   const navigate = useNavigate();
@@ -33,7 +34,6 @@ function Palavras() {
       >
         ⬅ Voltar ao Reino
       </button>
-
     </div>
   );
 }

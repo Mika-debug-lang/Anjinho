@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import BackgroundMusic from "../BackgroundMusic";
 
 function Apocalipse() {
   const navigate = useNavigate();
@@ -38,7 +39,6 @@ function Apocalipse() {
         </button>
 
       </div>
-
     </div>
   );
 }

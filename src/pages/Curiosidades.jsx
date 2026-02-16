@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import BackgroundMusic from "../BackgroundMusic";
 
 function Curiosidades() {
   const navigate = useNavigate();
@@ -84,7 +85,6 @@ function Curiosidades() {
         </button>
 
       </div>
-
     </div>
   );
 }

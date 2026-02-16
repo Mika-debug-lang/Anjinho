@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import BackgroundMusic from "../BackgroundMusic";
 
 function Corintios() {
   const navigate = useNavigate();
@@ -35,7 +36,6 @@ function Corintios() {
         </button>
 
       </div>
-
     </div>
   );
 }

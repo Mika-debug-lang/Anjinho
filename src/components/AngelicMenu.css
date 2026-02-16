@@ -1,0 +1,145 @@
+/* ============================= */
+/* DESKTOP PADRÃO */
+/* ============================= */
+
+.angelic-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 60px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+  z-index: 9999;
+}
+
+/* LOGO */
+.menu-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-logo h1 {
+  font-size: 22px;
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Ícone extra */
+.menu_logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #d4af37;
+}
+
+/* LINKS */
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #444;
+  font-size: 17px;
+  transition: 0.3s ease;
+  margin-right: 80px;
+}
+
+.menu-links a:hover,
+.menu-links a.active {
+  color: #d4af37;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+  border-bottom: 2px solid #d4af37;
+}
+
+.logo-title {
+  text-decoration: none;
+  color: #d4af37;
+  font-size: 22px;
+}
+
+.angel-icon {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
+
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 1024px) {
+
+  .angelic-menu {
+    padding: 15px 30px;
+  }
+
+  .menu-links {
+    gap: 20px;
+  }
+
+  .menu-links a {
+    font-size: 15px;
+  }
+
+  .menu-logo h1 {
+    font-size: 18px;
+  }
+
+}
+
+
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .angelic-menu {
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .container {
+    margin-top: 150px;
+  }
+
+  .menu-logo {
+    margin-bottom: 10px;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .menu-links a {
+    font-size: 16px;
+  }
+
+  .menu_logo img {
+    display: none; /* esconde imagem extra no mobile */
+  }
+
+}

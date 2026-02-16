@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import BackgroundMusic from "../BackgroundMusic";
 
 function Harpas() {
   const navigate = useNavigate();
@@ -73,7 +74,6 @@ function Harpas() {
         </button>
 
       </div>
-
     </div>
   );
 }

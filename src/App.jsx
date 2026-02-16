@@ -6,6 +6,10 @@ import Arrow from "./components/Arrow";
 import FortuneMessage from "./components/FortuneMessage";
 import MensagemSite from "./components/MensagemSite";
 import Footer from "./components/Footer";
+import ImagesBackground from "./components/ImagesBackground";
+import AngelicMenu from "./components/AngelicMenu";
+import BackgroundMusic from "./BackgroundMusic";
+
 
 import Palavras from "./pages/Palavras";
 import Mateus from "./pages/Mateus";
@@ -53,17 +57,25 @@ function Home() {
   return (
     <div className="container">
 
-      <div className="celestial-background" />
+      {/* 🔵 CAMADA 1 — FUNDO */}
+      <div className="background-layer">
+        <ImagesBackground />
+        <div className="celestial-background" />
+      </div>
 
+      {/* 🟡 CAMADA 2 — MENU FIXO */}
+      <div className="menu-layer">
+        <AngelicMenu />
+      </div>
+
+      {/* 🔴 CAMADA 3 — CONTEÚDO PRINCIPAL */}
       <div className="content-layer">
 
-        {/* Anjo e flecha */}
         <Angel onShoot={handleShoot} />
         <Arrow active={isShooting} />
 
         {showMessage && <FortuneMessage text={message} />}
 
-        {/* Reino */}
         <div
           className="celestial-gate"
           onClick={() => navigate("/palavras")}
@@ -71,7 +83,6 @@ function Home() {
           <img src="/images/reino_celestial.png" alt="Reino Divino" />
         </div>
 
-        {/* Harpas */}
         <div
           className="harp-angels"
           onClick={() => navigate("/harpas")}
@@ -79,7 +90,6 @@ function Home() {
           <img src="/images/angel_coral.png" alt="Anjos com Harpas" />
         </div>
 
-        {/* Curiosidades */}
         <div
           className="curiosity-box"
           onClick={() => navigate("/curiosidades")}
@@ -87,12 +97,9 @@ function Home() {
           <img src="/images/angel_pergaminho.png" alt="Curiosidades Bíblicas" />
         </div>
 
-        {/* Mensagem do propósito do site */}
         <MensagemSite />
-
-        {/* Rodapé */}
         <Footer />
-
+        <BackgroundMusic />
       </div>
 
     </div>

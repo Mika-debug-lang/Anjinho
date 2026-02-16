@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import BackgroundMusic from "../BackgroundMusic";
 
 function Mateus() {
   const navigate = useNavigate();
@@ -36,7 +37,6 @@ function Mateus() {
         </button>
 
       </div>
-
     </div>
   );
 }
